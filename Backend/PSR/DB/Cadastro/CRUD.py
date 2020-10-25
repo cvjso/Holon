@@ -9,6 +9,7 @@ def FindPSR(data):
 def CreatePSR(data):
     newPSR = CadastroPSR(**data)
     newPSR.save()
+    return newPSR
 
 def DeletePSR(data):
     newPSR = FindPSR(data)

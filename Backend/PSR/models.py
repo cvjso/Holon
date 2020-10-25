@@ -39,17 +39,19 @@ class CadastroPSR(models.Model):
     GrauPrioridade = models.CharField(max_length=120, choices=GRAU)
 
 class NecessidadesPSR(models.Model):
+    Psr = models.ForeignKey(CadastroPSR, on_delete=models.CASCADE)
+
     agua = [(i,ListaAgua[i]) for i in ListaAgua]
-    Agua = models.CharField(max_length=50, choices=agua)
+    Agua = models.CharField(max_length=50, choices=agua,blank=True)
 
     Assis = [(i,ListaAss[i]) for i in ListaAss]
-    Saude = models.CharField(max_length = 50, choices = Assis, default = 'REMEDIOS')
+    Saude = models.CharField(max_length = 50, choices = Assis, default = 'REMEDIOS',blank=True)
 
     higiene = [(i,ListaHigiene[i]) for i in ListaHigiene]
-    Higiene = models.CharField(max_length=50, choices=higiene)
+    Higiene = models.CharField(max_length=50, choices=higiene,blank=True)
 
     roupas = [(i,ListaRoupas[i]) for i in ListaRoupas]
-    Roupas = models.CharField(max_length=50, choices=roupas, default='CAMISA')
+    Roupas = models.CharField(max_length=50, choices=roupas, default='CAMISA',blank=True)
 
-    Comida = models.CharField(max_length=120)
-    Outros = models.CharField(max_length=120)
+    Comida = models.CharField(max_length=120,blank=True)
+    Outros = models.CharField(max_length=120,blank=True)
