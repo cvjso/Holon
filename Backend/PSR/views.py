@@ -12,16 +12,16 @@ class PSR(APIView):
     def post(self, request, *args, **kwargs):
         if request.data["operation"] == "criar":
             CreatePSR(request.data["psr"])
-            return Response("Cadastrado")
+            return Response("Reporte Cadastrado")
 
         if request.data["operation"] == "deletar":
             try:
                 DeletePSR(request.data["psr"])
-                resp = "PSR Deletado"
+                resp = "Reporte Deletado"
             except Exception:
                 resp = ""
             return Response(resp)
-        
+
         if request.data["operation"] == "procurar":
             resp = FindPSR(request.data["psr"])
             try:
@@ -29,13 +29,7 @@ class PSR(APIView):
             except Exception:
                 resp = []
             return Response(resp)
-
-# def product_create_view(request):
-    # form = ProductForm(request.POST or None)
-#     print(form)
-#     if form.is_valid():
-#         form.save()
-#     context = {
-#         "form":form
-#     }
-#     return render(request, 'products/create.html', context)
+        
+        if request.data["operation"] == "atualizar":
+            UpdatePSR(request.data["psr"])
+            return Response("Reporte Atualizado")

@@ -13,3 +13,6 @@ def CreatePSR(data):
 def DeletePSR(data):
     newPSR = FindPSR(data)
     newPSR.delete()
+
+def UpdatePSR(data):
+    CadastroPSR.objects.filter(id=data["id"]).update(**data)
