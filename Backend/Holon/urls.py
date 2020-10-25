@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from pages.views import TesteView
+from PSR.views import PSR
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('', TesteView.as_view(), name='home'),
+    path('psr', PSR.as_view()),
     path('admin/', admin.site.urls),
 ]

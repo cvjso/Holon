@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #own
-    'pages'
+    'pages',
+    'PSR'
 
 ]
 
@@ -83,11 +84,14 @@ WSGI_APPLICATION = 'Holon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "teste",
+        'NAME': "Holon",
         'USER': 'djangoUser',
         'PASSWORD': 'Holon2020',
         'HOST': 'localhost',
-        'PORT': '3325',
+        'PORT': '3306',
+        'OPTIONS': {
+            'read_default_file': '/etc/mysql/my.cnf',
+        }
     }
 }
 
