@@ -43,7 +43,8 @@ INSTALLED_APPS = [
 
     #own
     'pages',
-    'PSR'
+    'PSR',
+    'Users'
 
 ]
 
