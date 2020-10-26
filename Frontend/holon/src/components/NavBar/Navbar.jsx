@@ -13,12 +13,15 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
+
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <i class='fab fa-angellist' />
         </Link>
+
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-bars' : 'fas fa-bars'} />
         </div>
+
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link 
@@ -46,6 +49,7 @@ function Navbar() {
               Como dar Assistência
             </Link>
           </li>
+          
           <li className='nav-item'>
             <Link
               to='/faq'
@@ -64,6 +68,7 @@ function Navbar() {
               Sobre Nós
             </Link>
           </li>
+
           <li className='nav-item'>
             <Link
               to='/ajuda'
