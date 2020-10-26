@@ -88,11 +88,12 @@
     position: flex;
   }
 
+
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 342px;
-    height: 790px;
+    height: 100%;
     position: fixed;
     top: 0px;
     left: -100%;
