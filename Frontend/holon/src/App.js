@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
 import Navbar from './components/NavBar/Navbar';
-import Home from './components/Itens/Home/Home';
-import Comodarassistencia from './components/Itens/ComodarAssistencia/Comodarassistencia';
-import Faq from './components/Itens/FAQ/Faq';
-import SobreNos from './components/Itens/SobreNos/SobreNos';
-import Ajuda from './components/Itens/Ajuda/Ajuda';
-import Entrar from './components/Itens/Entrar/Entrar';
-import Cadastrar from './components/Itens/Cadastrar/Cadastrar';
+import Comodarassistencia from './components/ComodarAssistencia/Comodarassistencia';
+import Faq from './components/FAQ/Faq';
+import SobreNos from './components/SobreNos/SobreNos';
+import Ajuda from './components/Ajuda/Ajuda';
+import Entrar from './components/Entrar/Entrar';
+import Cadastrar from './components/Cadastrar/Cadastrar';
+
 
 function App() {
   return (

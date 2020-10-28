@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
       <h1 className='topText' id="text-attributes">A mudança começa com você</h1>
       <h1 className='bottomText' id="text-attributes">Faça parte de uma rede de auxílio dedicada a ajudar pessoas em situação de rua através de uma simples plataforma online</h1>
       <div className="btnChamado">
-        <a href="/" className="linkChamado">Abrir um chamado</a>
+        {<a href="/" className="linkChamado">Abrir um chamado</a>}
       </div>
       
     </div>

@@ -36,7 +36,7 @@
     position: absolute;
     top: 63%;
     left: 50%;
-    width: 195.5px;
+    width: 210px;
     display: flex;
     text-align: center;
     align-items: center;
@@ -50,6 +50,11 @@
   }
 
   .linkChamado{
+    padding-left: 32px;
+    background-image: url('./megafone.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    text-decoration: none;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
@@ -60,6 +65,7 @@
     text-decoration: none;
   }
 
+  
 
 #text-attributes {
   font-family: Poppins;

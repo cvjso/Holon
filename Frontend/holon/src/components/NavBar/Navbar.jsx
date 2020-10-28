@@ -68,7 +68,7 @@ function Navbar() {
               Sobre Nós
             </Link>
           </li>
-
+          <li className="nav-line" />
           <li className='nav-item'>
             <Link
               to='/ajuda'
@@ -77,9 +77,6 @@ function Navbar() {
             >
               Ajuda
             </Link>
-          </li>
-          <li>
-            
           </li>
         </ul>
         <Link

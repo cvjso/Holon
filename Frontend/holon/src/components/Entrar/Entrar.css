@@ -1,0 +1,144 @@
+.mainDiv {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.topText {
+  position: absolute;
+  left: 48%;
+  right: 90%;
+  top: 14.51%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;  
+}
+
+.back-icon {
+  position: absolute;
+  left: 6.89%;
+  right: 90%;
+  top: 12.51%;
+  bottom: 85.05%;
+  color: black;
+  font-size: 25px;
+}
+
+.google-icon {
+  position: absolute;
+  left: 32%;
+  right: 55.2%;
+  top: 20.47%;
+  bottom: 85.05%;
+  color: black;
+  font-size: 45px;
+}
+
+.facebook-icon {
+  position: absolute;
+  left: 55.47%;
+  right: 31.73%;
+  top: 20.47%;
+  bottom: 85.05%;
+  color: black;
+  font-size: 45px;
+}
+
+
+.topText2 {
+  position: absolute;
+  width: 126px;
+  height: 18px;
+  left: 35%;
+  top: 286.96px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.line{
+  position: absolute;
+  width: 92.5px;
+  height: 0px;
+  left: 10%;
+  top: 35%;
+  border: 1px solid #000000;
+}
+
+.line2{
+    position: absolute;
+    width: 92.5px;
+    height: 0px;
+    left: 68%;
+    top: 35%;
+    border: 1px solid #000000
+}
+
+.bottomEmail{
+  position: absolute;
+  width: 335px;
+  height: 48px;
+  left: 10%;
+  top: 39%;
+  background: #CEBDBD;
+  border-radius: 4px;
+}
+
+.bottomSenha{
+  position: absolute;
+  width: 335px;
+  height: 48px;
+  left: 10%;
+  top: 48%;
+  background: #CEBDBD;
+  border-radius: 4px;
+}
+
+.topText3 {
+  position: absolute;
+  width: 129px;
+  height: 18px;
+  left: 10%;
+  top: 57%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: black;
+}
+
+.bottomEntrar {
+  position: absolute;
+  width: 335px;
+  height: 48px;
+  left: 10%;
+  top: 63%;
+  background: #835757;
+  border-radius: 4px;
+}
+
+.topText4 {
+  position: absolute;
+  width: 52px;
+  height: 21px;
+  left: 40%;
+  top: 23%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+
+

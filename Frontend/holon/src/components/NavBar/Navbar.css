@@ -12,6 +12,7 @@
   color: black;
   justify-self: start;
   margin-left: 30px;
+  height: 35px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -21,20 +22,20 @@
   color: black;
   justify-self: start;
   margin-left: 30px;
-  height: 45px;
+  height: 35px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .navbar-entrar-cadastrar {
   color: black;
   justify-self: start;
   margin-left: 30px;
-  height: 45px;
+  height: 35px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .fa-firstdraft {
@@ -43,7 +44,7 @@
 }
 
 .nav-menu {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   list-style: none;
@@ -81,6 +82,7 @@
 
 .menu-icon {
   display: none;
+  height: 35px;
 }
 
 @media screen and (max-width: 960px) {
@@ -119,6 +121,15 @@
     color: #FFFFFF;
   }
 
+  .nav-line{
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    left: 0px;
+    top: 42.5%;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
   .nav-links-logo {
     text-align: left;
     padding: 1rem;
@@ -132,7 +143,7 @@
 
   .nav-links-logo2 {
     position: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     height: 100vh;
     width: 30%;
     color: #FFFFFF;
@@ -157,7 +168,7 @@
     top: 0;
     right: 8rem;
     transform: translate(25%, 60%);
-    font-size: 1rem;
+    font-size: 1.1rem;
     
   }
 
@@ -166,7 +177,7 @@
     top: 0;
     right: 2rem;
     transform: translate(25%, 60%);
-    font-size: 1rem;
+    font-size: 1.1rem;
     
   }
 
