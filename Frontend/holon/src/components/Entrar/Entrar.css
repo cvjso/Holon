@@ -7,6 +7,7 @@
 
 .topText {
   position: absolute;
+  display: flex;
   left: 48%;
   right: 90%;
   top: 14.51%;
@@ -20,6 +21,7 @@
 
 .back-icon {
   position: absolute;
+  display: flex;
   left: 6.89%;
   right: 90%;
   top: 12.51%;
@@ -30,6 +32,7 @@
 
 .google-icon {
   position: absolute;
+  display: flex;
   left: 32%;
   right: 55.2%;
   top: 20.47%;
@@ -40,6 +43,7 @@
 
 .facebook-icon {
   position: absolute;
+  display: flex;
   left: 55.47%;
   right: 31.73%;
   top: 20.47%;
@@ -51,6 +55,7 @@
 
 .topText2 {
   position: absolute;
+  display: flex;
   width: 126px;
   height: 18px;
   left: 35%;
@@ -65,6 +70,7 @@
 
 .line{
   position: absolute;
+  display: flex;
   width: 92.5px;
   height: 0px;
   left: 10%;
@@ -74,6 +80,7 @@
 
 .line2{
     position: absolute;
+    display: flex;
     width: 92.5px;
     height: 0px;
     left: 68%;
@@ -83,6 +90,7 @@
 
 .bottomEmail{
   position: absolute;
+  display: flex;
   width: 335px;
   height: 48px;
   left: 10%;
@@ -93,6 +101,7 @@
 
 .bottomSenha{
   position: absolute;
+  display: flex;
   width: 335px;
   height: 48px;
   left: 10%;
@@ -103,6 +112,7 @@
 
 .topText3 {
   position: absolute;
+  display: flex;
   width: 129px;
   height: 18px;
   left: 10%;
@@ -117,6 +127,7 @@
 
 .bottomEntrar {
   position: absolute;
+  display: flex;
   width: 335px;
   height: 48px;
   left: 10%;
@@ -127,6 +138,7 @@
 
 .topText4 {
   position: absolute;
+  display: flex;
   width: 52px;
   height: 21px;
   left: 40%;
