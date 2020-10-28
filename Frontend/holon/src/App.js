@@ -6,7 +6,7 @@ import Comodarassistencia from './components/ComodarAssistencia/Comodarassistenc
 import Faq from './components/FAQ/Faq';
 import SobreNos from './components/SobreNos/SobreNos';
 import Ajuda from './components/Ajuda/Ajuda';
-import Entrar from './components/Entrar/Entrar';
+import Entrar from './components/Entrar/Entrar.js';
 import Cadastrar from './components/Cadastrar/Cadastrar';
 
 
