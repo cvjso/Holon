@@ -1,18 +1,10 @@
 
-
-  .mainDiv {
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-  }
-  
-  .topText {
+  .Text {
     margin: 0;
     position: absolute;
-    top: 45%;
+    top: 43%;
     left: 50%;
-    width: 100%;
+    width: 70%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 20px;
