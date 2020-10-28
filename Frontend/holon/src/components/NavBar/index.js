@@ -1,29 +1,38 @@
 import React, { useState } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './styles.css';
 
+export class Navbar extends Component {
 
-function Navbar() {
-  const [click, setClick] = useState(false);
-  
+  // [click, setClick] = useState(false);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  handleClick = () => this.setState({click: !this.state.click});
+  closeMobileMenu = () => this.setState({setClick: false});
 
-  return (
-    <>
+  constructor(props){
+    super(props)
+    this.state ={
+      click: false,
+      setClick: false
+    }
+  }
+
+  render() {
+    return (
       <nav className='navbar'>
 
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+        <Link to='/' onClick={() => this.closeMobileMenu()}>
+          {/* <img src={require('./imagens/logoSamaritanos.png')}></img> */}
           <i class='fab fa-angellist' />
         </Link>
 
-        <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-bars' : 'fas fa-bars'} />
+        <div className='menu-icon' onClick={() => this.handleClick()}>
+          <i className={this.click ? 'fas fa-bars' : 'fas fa-bars'} />
         </div>
 
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item-logo'>
+        <ul className={this.click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
             <Link 
               to='/' 
               className='nav-links-logo' 
@@ -33,7 +42,7 @@ function Navbar() {
             <Link 
               to='/' 
               className='nav-links-logo2' 
-              onClick={closeMobileMenu}
+              onClick={() => this.closeMobileMenu()}
             >
              <i class='fas fa-times' />
             </Link>
@@ -44,7 +53,7 @@ function Navbar() {
             <Link
               to='/como-dar-assistencia'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => this.closeMobileMenu()}
             >
               Como dar Assistência
             </Link>
@@ -54,7 +63,7 @@ function Navbar() {
             <Link
               to='/faq'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => this.closeMobileMenu()}
             >
               FAQ
             </Link>
@@ -63,7 +72,7 @@ function Navbar() {
             <Link
               to='/sobre-nos'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => this.closeMobileMenu()}
             >
               Sobre Nós
             </Link>
@@ -73,7 +82,7 @@ function Navbar() {
             <Link
               to='/ajuda'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => this.closeMobileMenu()}
             >
               Ajuda
             </Link>
@@ -82,20 +91,19 @@ function Navbar() {
         <Link
           to='/entrar'
           className='navbar-entrar'
-          onClick={closeMobileMenu}
+          onClick={() => this.closeMobileMenu()}
         >
           Entrar
         </Link>
         <Link
           to='/cadastrar'
           className='navbar-entrar-cadastrar'
-          onClick={closeMobileMenu}
+          onClick={() => this.closeMobileMenu()}
         >
           Cadastrar
         </Link>
       </nav>
-    </>
-  );
+    )
+  }
 }
-
-export default Navbar;
+export default Navbar
