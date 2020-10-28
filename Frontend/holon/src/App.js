@@ -8,6 +8,7 @@ import SobreNos from './components/SobreNos/SobreNos';
 import Ajuda from './components/Ajuda/Ajuda';
 import Entrar from './components/Entrar/Entrar.js';
 import Cadastrar from './components/Cadastrar/Cadastrar';
+import ReportePSR from './components/ReportePSR';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/ajuda' component={Ajuda} />
         <Route path='/entrar' component={Entrar} />
         <Route path='/cadastrar' component={Cadastrar} />
+        <Route path='/reporte' component={ReportePSR}/>
       </Switch>
     </Router>
   );
