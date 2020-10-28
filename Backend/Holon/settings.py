@@ -86,13 +86,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "Holon",
-        'USER': 'djangoUser',
-        'PASSWORD': 'Holon2020',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        }
+        'USER': 'admin',
+        'PASSWORD': 'CesarSchool2020',
+        'HOST': 'bdocesarschool.cz4e10w593pc.ca-central-1.rds.amazonaws.com',
+        'PORT': '3304',
+        # 'OPTIONS': {
+        #     'read_default_file': '/etc/mysql/my.cnf',
+        # }
     }
 }
 
