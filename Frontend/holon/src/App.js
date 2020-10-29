@@ -9,6 +9,7 @@ import Ajuda from './components/Ajuda/Ajuda';
 import Entrar from './components/Entrar/Entrar.js';
 import Cadastrar from './components/Cadastrar/Cadastrar';
 import ReportePSR from './components/ReportePSR';
+import Detalhes from './components/ReportePSR/Detalhes/detalhes';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/entrar' component={Entrar} />
         <Route path='/cadastrar' component={Cadastrar} />
         <Route path='/reporte' component={ReportePSR}/>
+        <Route path='/detalhes' component={Detalhes}/>
       </Switch>
     </Router>
   );
