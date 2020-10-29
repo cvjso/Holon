@@ -1,0 +1,32 @@
+.PSR-Main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.PSR-Content{
+    margin-top: 2%;
+}
+
+.PSR-Header {
+    margin-top: 15% !important;
+    margin-bottom: 15%;
+}
+
+.PSR-Content div {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+}
+
+.PSR-Content form text {
+    font-weight: bold;
+}
+
+.PSR-Content div input {
+    background: #CEBDBD;
+    border-radius: 4px;
+    height: 42px;
+}

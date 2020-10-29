@@ -1,0 +1,61 @@
+.Resumo-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Resumo-content {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+}
+
+.Resume-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.Resume-top h4 {
+    align-self: center;
+    margin-bottom: 5%;
+}
+
+.Resume-top-vertical-align {
+    display: flex;
+    flex-direction: column;
+}
+
+.Resume-top-vertical-align div {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.Resume-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Resume-bottom h3 {
+    align-self: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.Resume-bottom div {
+    margin-bottom: 5%;
+}
+
+.Custom-input-text {
+    background: #CEBDBD;
+    border-radius: 4px;
+    width: auto;
+    height: 38px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4 {
+    font-weight: bold;
+}
