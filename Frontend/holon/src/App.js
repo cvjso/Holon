@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './components/Home/Home';
+import Home from './components/Home/Home.js';
 import Navbar from './components/NavBar';
 import Comodarassistencia from './components/ComodarAssistencia/Comodarassistencia';
 import Faq from './components/FAQ/Faq';
@@ -11,6 +11,8 @@ import Cadastrar from './components/Cadastrar/Cadastrar';
 import ReportePSR from './components/PSR/Cadastro/ReportePSR';
 import NecessidadesPSR from './components/PSR/Cadastro/NecessidadesPSR';
 import ResumoPSR from './components/PSR/Cadastro/ResumoPSR';
+import ReportePSR from './components/ReportePSR';
+import Detalhes from './components/ReportePSR/Detalhes/detalhes';
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path='/reporte/P1' component={ReportePSR}/>
         <Route path='/reporte/P2' component={NecessidadesPSR}/>
         <Route path='/reporte/P3' component={ResumoPSR}/>
+        <Route path='/reporte' component={ReportePSR}/>
+        <Route path='/detalhes' component={Detalhes}/>
       </Switch>
     </Router>
   );
