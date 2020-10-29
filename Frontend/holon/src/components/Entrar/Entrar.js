@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Entrar.css';
 import { Link } from 'react-router-dom';
+// import '../NavBar/Navbar.css';
 
 
 export class Entrar extends Component {
