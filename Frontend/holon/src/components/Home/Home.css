@@ -1,3 +1,22 @@
+  .ReportBox {
+    box-sizing: flex;
+    margin: 0;
+    font-family: Poppins;
+    font-style: bold;
+    font-weight: normal;
+    background-color: #C4C4C4;
+    padding: 8%;
+  }
+
+  .EditButton{
+    text-align: right;
+    float: right;
+  }
+  
+  .TextoReportBox {
+    text-align: left;
+    margin-bottom: 10%;
+  }
 
   .Text {
     margin: 0;
