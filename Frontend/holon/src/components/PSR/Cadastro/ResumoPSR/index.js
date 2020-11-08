@@ -38,9 +38,7 @@ export class ResumoPSR extends Component {
     handleSubmit(event){
         event.preventDefault();
 
-        for (var key in this.state){ 
-            cookies.set(key, this.state[key]);
-        }
+        cookies.set("finished",true)
 
         this.setState({
             redirectP3: "/"
@@ -52,12 +50,7 @@ export class ResumoPSR extends Component {
         for (var key in cookies.getAll()){
             this.setState({[key]: cookies.get(key)});
         }
-        // for(var key in this.state.ListaNecessidades){
-        //     this.setState({key: cookies.get(key)});
-        // }
-        // for(var key in this.state.ListaPSR){
-        //     this.setState({key: cookies.get(key)});
-        // }
+
     }
 
     componentDidMount(){
@@ -113,9 +106,26 @@ export class ResumoPSR extends Component {
                             <h4>Como identificar?</h4>
                             {this.state.Referencia}
                         </div>
-                        <div>
+                        <div className="Resume-top-vertical-align">
                             <h4>O que precisa?</h4>
-                            {this.state.Referencia}
+                            <div>
+                                {this.state.Saude}
+                            </div>
+                            <div>
+                                {this.state.Comida}
+                            </div>
+                            <div>
+                                {this.state.Agua}
+                            </div>
+                            <div>
+                                {this.state.Higiene}
+                            </div>
+                            <div>
+                                {this.state.Roupas}
+                            </div>
+                            <div>
+                                {this.state.Outros}
+                            </div>
                         </div>
                         <div>
                             <h4>Grau de prioridade</h4>

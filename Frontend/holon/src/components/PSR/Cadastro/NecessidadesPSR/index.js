@@ -33,7 +33,7 @@ export class NecessidadesPSR extends Component {
     handleSubmit(event){
         event.preventDefault();
 
-        for (var key in this.state){
+        for (var key in Object.keys(this.state)){
             cookies.set(key, this.state[key]);
         }
 
