@@ -32,7 +32,7 @@ export class Entrar extends Component {
 		this.setState({ loading: true });
 
 		const data = {
-			operation: 'FindUser',
+			operation: 'auth',
 			email: 'admin',
 			senha: '123'
 		};

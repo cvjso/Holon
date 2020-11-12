@@ -32,7 +32,7 @@ export class Cadastrar extends Component{
 		this.setState({ loading: true });
 
 		const data = {
-			operation: 'CreateUser',
+			operation: 'registrar',
 			nome: 'Victor Souza',
 			email: 'admin',
 			senha: '123'
