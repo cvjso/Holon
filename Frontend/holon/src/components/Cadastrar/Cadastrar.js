@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './reset.css'
-import './Entrar.css';
+import './Cadastrar.css';
 import Cookies from 'universal-cookie';
-import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 const cookies = new Cookies();
 
-export class Entrar extends Component {
+export class Cadastrar extends Component{
   constructor(props) {
 		super(props);
 
 		this.state = {
+			nome: '',
 			login: '',
 			password: '',
 			logged: false,
@@ -32,7 +32,8 @@ export class Entrar extends Component {
 		this.setState({ loading: true });
 
 		const data = {
-			operation: 'FindUser',
+			operation: 'CreateUser',
+			nome: 'Victor Souza',
 			email: 'admin',
 			senha: '123'
 		};
@@ -62,7 +63,8 @@ export class Entrar extends Component {
 				console.log(error);
 			});
 	}
-  render() 
+  
+  render()
           {
           if (this.props.location.state.auth.authenticated === false) {
             return (
@@ -75,7 +77,7 @@ export class Entrar extends Component {
 
                 <div className="items">
 
-                  <h1 className='topText'>Entrar</h1>
+                  <h1 className='topText'>Comece na corrente do bem</h1>
 
                   <div className="icones">
 
@@ -85,22 +87,36 @@ export class Entrar extends Component {
                   </div>
 
                   <div className="line-text">
-                    <div className="line"/><h2 className='topText2'>Ou entre com e-mail</h2><div className="line" />
+                    <div className="line"/><h2 className='topText2'>Ou crie uma conta</h2><div className="line" />
                   </div>
                   
                   <form onSubmit={this.handleSubmit} noValidate>
-                    <input name='login'  type="login" value={this.state.login} className="bottomEmail" placeholder="Login" onChange={this.handleChange} required />
-                    <input name='password' type="password" className="bottomSenha" placeholder="Senha" onChange={this.handleChange} required />
-                    <a href="/" className="topText3">Esqueci minha senha</a>
+                    <input name="nome" onChange={this.handleChange} type="text" className="bottomNome" placeholder="Nome Completo" required />
+                    <input name="login" onChange={this.handleChange} type="email" className="bottomEmail" placeholder="Login" required />
+                    <input name="senha" onChange={this.handleChange} type="password" className="bottomSenha" placeholder="Senha" required />
+                    
+                    <div>
+                      <input type="checkbox" name="Termos" value="termos" className="checkbox"></input>
+                      <label for="termos">Sim, eu concordo com os Termos e Politica de Privacidade</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" name="Notificações" value="notificacoes" className="checkbox"></input>
+                      <label for="notificacoes">Sim, quero receber notificações por e-mail</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" name="Localização" value="localizacao" className="checkbox"></input>
+                      <label for="localizacao">Sim, permito o uso da minha localização</label>
+                    </div>
 
-                    {!this.state.loading && <input type="submit" value="Entrar" className="bottomEntrar" />}
+                    {!this.state.loading && <input type="submit" value="Começar" className="bottomEntrar" />}
+
                   </form>
 
                 </div>
 
               </section>
-            )
-          } else {
+			)
+		} else {
             return (
               <section className="mainDiv">
 
@@ -113,6 +129,9 @@ export class Entrar extends Component {
               </section>
             )
           }
-        }
+		}
+			
 }
-export default Entrar;
+
+
+export default Cadastrar;
