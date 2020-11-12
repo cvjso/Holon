@@ -11,6 +11,7 @@ import Cadastrar from './components/Cadastrar/Cadastrar';
 import ReportePSR from './components/PSR/Cadastro/ReportePSR';
 import NecessidadesPSR from './components/PSR/Cadastro/NecessidadesPSR';
 import ResumoPSR from './components/PSR/Cadastro/ResumoPSR';
+import Informacoes from './components/ReportePSR/Informacoes';
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/reporte/P2' component={NecessidadesPSR}/>
           <Route path='/reporte/P3' component={ResumoPSR}/>
           <Route path='/reporte' component={ReportePSR}/>
+          <Route path='/informacoes' component={Informacoes}/>
           {/* <Route path='/detalhes' component={Detalhes}/> */}
         </Switch>
       </Router>

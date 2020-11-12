@@ -1,0 +1,192 @@
+.ParteSuperior {
+    padding: 13%;
+}
+
+.topText {
+}
+
+.back-icon {
+    margin-top: 15px;
+}
+
+.DivInicioConclusao {
+    display: flex;
+    flex-direction: row;
+    border-bottom: black;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-top: transparent;
+    border-right: transparent;
+    border-left: transparent;
+
+}
+
+.DataInicio {
+    display: flex;
+    align-items: center;
+    padding-left: 7%;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+.DataConclusao {
+    position: absolute;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    float: right;
+    flex-direction: column;
+    
+
+}
+
+#lbAttributes {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#lbDataHora {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.DivInformacoes{
+    padding-top: 25px;
+}
+
+#titleAttributes {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 7%;
+    padding-bottom: 3%;
+}
+
+#itemAttributes {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    padding-left: 7%;
+    padding-bottom: 5%;
+}
+
+.precisaCamisa {
+    display: flex;
+    margin-left: 32px;
+    text-align: center;
+    align-content: center;
+    background-image: url('../images/camisa.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+.precisaComida {
+    display: flex;
+    margin-left: 32px;
+    text-align: center;
+    align-content: center;
+    background-image: url('../images/maca.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+.precisaAgua {
+    display: flex;
+    margin-left: 32px;
+    text-align: center;
+    align-content: center;
+    background-image: url('../images/gota.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+.precisaTitle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 7%;
+}
+
+.roupaTitle {
+    display: flex;
+    padding-left: 3px;
+    vertical-align: center;
+    margin-top: 17px;
+
+}
+
+#precisaAttributes {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.roupaItem {
+    padding-left: 7%;
+    margin-left: 35px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.grauPrioridade {
+    padding-top: 5%;
+}
+
+.sizePrioridade {
+    background: #1FFF0C;
+    width: 174px;
+    height: 24px;
+    margin-left: 7%;
+}
+
+.porcentagemPrioridade {
+    width: 50px;
+    margin-left: 7%;
+
+    padding-bottom: 5%;
+
+}
+
+.back-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.btCancelar {
+    background-color: #C4C4C4;
+    border: none;
+    display: inline-block;   
+
+    width: 100%;
+    height: 48px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #000000;
+}
