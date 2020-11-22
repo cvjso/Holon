@@ -11,30 +11,32 @@ import Cadastrar from './components/Cadastrar/Cadastrar';
 import ReportePSR from './components/PSR/Cadastro/ReportePSR';
 import NecessidadesPSR from './components/PSR/Cadastro/NecessidadesPSR';
 import ResumoPSR from './components/PSR/Cadastro/ResumoPSR';
+import Mapa from './components/Mapa';
 import './App.css';
+require('dotenv').config();
 
 function App() {
-  return (
-    <div className="Main">
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/como-dar-assistencia' component={Comodarassistencia} />
-          <Route path='/faq' component={Faq} />
-          <Route path='/sobre-nos' component={SobreNos} />
-          <Route path='/ajuda' component={Ajuda} />
-          <Route path='/entrar' component={Entrar} />
-          <Route path='/cadastrar' component={Cadastrar} />
-          <Route path='/reporte/P1' component={ReportePSR}/>
-          <Route path='/reporte/P2' component={NecessidadesPSR}/>
-          <Route path='/reporte/P3' component={ResumoPSR}/>
-          <Route path='/reporte' component={ReportePSR}/>
-          {/* <Route path='/detalhes' component={Detalhes}/> */}
-        </Switch>
-      </Router>
-    </div>
-  );
+	return (
+		<div className="Main">
+			<Router>
+				<NavBar />
+				<Switch>
+					<Route path="/" exact component={Home} />
+					<Route path="/como-dar-assistencia" component={Comodarassistencia} />
+					<Route path="/faq" component={Faq} />
+					<Route path="/sobre-nos" component={SobreNos} />
+					<Route path="/ajuda" component={Ajuda} />
+					<Route path="/entrar" component={Entrar} />
+					<Route path="/cadastrar" component={Cadastrar} />
+					<Route path="/reporte/P1" component={ReportePSR} />
+					<Route path="/reporte/P2" component={NecessidadesPSR} />
+					<Route path="/reporte/P3" component={ResumoPSR} />
+					<Route path="/reporte" component={ReportePSR} />
+					<Route path="/mapa" component={Mapa} />
+				</Switch>
+			</Router>
+		</div>
+	);
 }
 
 export default App;
