@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Cookies from 'universal-cookie';
+import Facebook from '../FacebookBtn/index';
+import GoogleBtn from '../GoogleBtn/index';
 
 const cookies = new Cookies();
 
