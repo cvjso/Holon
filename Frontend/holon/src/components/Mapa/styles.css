@@ -1,0 +1,19 @@
+.Search {
+	position: absolute;
+	top: 2rem;
+	z-index: 10;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 300px;
+	height: 32px;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	text-align: center;
+	text-overflow: ellipsis;
+}
+
+.Map-container {
+	width: 100%;
+	display: flex;
+	height: calc(100vh - 42.76px);
+}
