@@ -1,11 +1,12 @@
   .ReportBox {
     box-sizing: flex;
-    margin: 0;
+    margin-bottom: 3px;
     font-family: Poppins;
     font-style: bold;
     font-weight: normal;
     background-color: #C4C4C4;
-    padding: 8%;
+    padding: 5%;
+    
   }
 
   .EditButton{
@@ -15,19 +16,28 @@
   
   .TextoReportBox {
     text-align: left;
-    margin-bottom: 10%;
+    font-family: Poppins;
+    font-style: bold;
+    font-weight: normal;
+    margin-bottom: 5%;
   }
+
+  .Details {
+    margin-top: 5%;
+  }
+
 
   .Text {
     margin: 0;
+    font-size: 20px;
+    line-height: 30px;
     position: absolute;
     top: 43%;
     left: 50%;
     width: 70%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: 20px;
-    line-height: 30px;
+
   }
 
   .bottomText {
