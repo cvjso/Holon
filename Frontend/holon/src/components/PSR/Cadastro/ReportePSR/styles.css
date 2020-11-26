@@ -1,32 +1,65 @@
-.PSR-Main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+@import "../../../../App.css";
+
+.PSR-Main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
-.PSR-Content{
-    margin-top: 2%;
+.report-form {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.report-form div {
+	width: 100%;
+}
+
+.Report-input {
+	background: var(--Lighter) !important;
+	/* border-radius: 4px !important; */
+	/* width: 100%; */
+	border: 0;
+	height: 48px !important;
+	margin-left: 3.33%;
+	margin-top: 1.5%;
+	color: var(--TextHeading);
+	text-indent: 5px;
+	margin-right: 3.33%;
+}
+
+.PSR-Main text {
+	color: var(--TextHeading);
+}
+
+.PSR-Content {
+	margin-top: 2%;
+	width: 100%;
+	height: 100%;
 }
 
 .PSR-Header {
-    margin-top: 15% !important;
-    margin-bottom: 15%;
+	margin-top: 4% !important;
+	margin: auto 4%;
 }
 
 .PSR-Content div {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    height: 20%;
+	margin-top: 5%;
+	display: flex;
+	flex-direction: column;
+	height: 20%;
 }
 
 .PSR-Content form text {
-    font-weight: bold;
+	font-weight: bold;
+	margin-left: 3%;
 }
 
 .PSR-Content div input {
-    background: #CEBDBD;
-    border-radius: 4px;
-    height: 42px;
+	background: #cebdbd;
+	border-radius: 4px;
+	height: 42px;
 }

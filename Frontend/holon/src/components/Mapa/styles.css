@@ -15,5 +15,64 @@
 .Map-container {
 	width: 100%;
 	display: flex;
-	height: calc(100vh - 42.76px);
+	height: calc(100vh - 46px);
+}
+
+.modal-chamado-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 80vh;
+}
+
+.modal-chamado-infos div {
+	margin-top: 6%;
+}
+
+.modal-chamado-infos div * {
+	padding-top: 1%;
+}
+
+.modal-chamado-container h1 {
+	font-size: 1.5rem;
+}
+
+.modal-chamado-container h3 {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.modal-chamado-container button {
+	margin-left: auto;
+	width: 8%;
+}
+
+.modal-ajuda-button {
+	width: 100% !important;
+	margin-top: auto;
+	height: 65px;
+	background: #835757;
+	color: #ffffff;
+	border: none;
+	border-radius: 2%;
+}
+
+.modal-ajuda-button:hover {
+	opacity: 0.8;
+}
+
+.modal-fechar {
+	text-decoration: none;
+	width: 10% !important;
+	background: #ff3c3c;
+	color: #ffffff;
+	height: 24px;
+}
+
+button {
+	border: 0;
+	font-size: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }

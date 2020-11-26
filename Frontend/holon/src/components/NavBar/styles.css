@@ -1,9 +1,23 @@
-.Nav-items{
-  margin-left: auto;
-  display: flex;
-  margin-right: 10%;
+@import "../../App.css";
+
+.Nav-items {
+	margin-left: auto;
+	display: flex;
+	margin-right: 10%;
 }
 
 .Nav-items * {
-  margin-right: 10%;
+	margin-right: 10%;
+}
+
+.custom-theme {
+	background: var(--Lighter);
+}
+
+.custom-theme a {
+	color: var(--TextHeading);
+}
+
+.custom-theme a:hover {
+	color: #e7e7fe;
 }

@@ -99,10 +99,12 @@ export class Mapa extends Component {
 							visible={true}
 							// onHide={this.handleSidebarHide}
 						>
-							<div>
-								<button onClick={this.handleSidebarHide}>X</button>
-								<h2>Detalhes do Chamado</h2>
-								<div>
+							<div className="modal-chamado-container">
+								<button className="modal-fechar" onClick={this.handleSidebarHide}>
+									X
+								</button>
+								<h1>Detalhes do Chamado</h1>
+								<div className="modal-chamado-infos">
 									<div>
 										<h3>Início do chamado</h3>
 										<text>01/10/2020, 09:20</text>
@@ -121,8 +123,8 @@ export class Mapa extends Component {
 									<div>
 										<h3>Grau de prioridade</h3>
 									</div>
-									<button>Quero Ajudar</button>
 								</div>
+								<button className="modal-ajuda-button">Quero Ajudar</button>
 							</div>
 						</Sidebar>
 					) : (

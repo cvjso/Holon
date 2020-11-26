@@ -1,17 +1,32 @@
-.Main{
-    width: 100%;
-    height: 100%;
+:root {
+	--Darker: #121212;
+	--Lighteen: #3d3d3d;
+	--Lighter: #282828;
+	--TextHeading: #ffffff;
+	--ButtonBright: #86a0fc;
+}
+
+.Main {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: var(--Darker) !important;
 }
 
 Link {
-    color: black;
+	color: black;
 }
 
-a, a:hover, a:focus, a:active {
-    color: inherit;
-    text-decoration: none;
+a,
+a:hover,
+a:focus,
+a:active {
+	color: inherit;
+	text-decoration: none;
 }
 
-a:hover{
-    opacity: 0.5;
+a:hover {
+	opacity: 0.5;
 }
