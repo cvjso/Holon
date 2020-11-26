@@ -68,7 +68,7 @@ export class Cadastrar extends Component{
           {
           if (this.props.location.state.auth.authenticated === false) {
             return (
-              <section className="mainDiv">
+              <div className="mainDiv">
                 <div>
                   <a href='/' className='back-icon'>
                     <i class='fas fa-chevron-left' />
@@ -114,11 +114,11 @@ export class Cadastrar extends Component{
 
                 </div>
 
-              </section>
+              </div>
 			)
 		} else {
             return (
-              <section className="mainDiv">
+              <div className="mainDiv">
 
                 <div>
                   <a href='/' className='back-icon'>
@@ -126,7 +126,7 @@ export class Cadastrar extends Component{
                   </a>
                 </div>
 
-              </section>
+              </div>
             )
           }
 		}

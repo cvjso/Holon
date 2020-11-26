@@ -3,6 +3,7 @@ import './reset.css'
 import './Entrar.css';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
+import GoogleBtn from '../GoogleBtn/index';
 
 const cookies = new Cookies();
 
@@ -66,7 +67,7 @@ export class Entrar extends Component {
           {
           if (this.props.location.state.auth.authenticated === false) {
             return (
-              <section className="mainDiv">
+              <div className="mainDiv">
                 <div>
                   <a href='/' className='back-icon'>
                     <i class='fas fa-chevron-left' />
@@ -79,7 +80,9 @@ export class Entrar extends Component {
 
                   <div className="icones">
 
-                    <a href='/' className="google-icon"><i class='fab fa-google' /></a>
+                    <a href='/' className="google-icon">
+						<i class='fab fa-google' />
+					</a>
                     <a href='/' className="facebook-icon"><i class='fab fa-facebook' /></a>
 
                   </div>
@@ -98,11 +101,11 @@ export class Entrar extends Component {
 
                 </div>
 
-              </section>
+              </div>
             )
           } else {
             return (
-              <section className="mainDiv">
+              <div className="mainDiv">
 
                 <div>
                   <a href='/' className='back-icon'>
@@ -110,9 +113,12 @@ export class Entrar extends Component {
                   </a>
                 </div>
 
-              </section>
+              </div>
             )
           }
         }
 }
 export default Entrar;
+
+
+//269049783462-cikoeou5mg35qmonpl2a3v7bu5umaef8.apps.googleusercontent.com

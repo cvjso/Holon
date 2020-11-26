@@ -12,7 +12,8 @@ import ReportePSR from './components/PSR/Cadastro/ReportePSR';
 import NecessidadesPSR from './components/PSR/Cadastro/NecessidadesPSR';
 import ResumoPSR from './components/PSR/Cadastro/ResumoPSR';
 import Mapa from './components/Mapa';
-import Informacoes from './components/ReportePSR/Informacoes';
+import SuaAtividadeAtendido from './components/SuaAtividade/Atendidos'
+import SuaAtividadeReportado from './components/SuaAtividade/Reportados'
 import './App.css';
 require('dotenv').config();
 
@@ -33,8 +34,9 @@ function App() {
 					<Route path="/reporte/P2" component={NecessidadesPSR} />
 					<Route path="/reporte/P3" component={ResumoPSR} />
 					<Route path="/reporte" component={ReportePSR} />
-					<Route path="/informacoes" component={Informacoes} />
 					<Route path="/mapa" component={Mapa} />
+					<Route path="/suaAtividadeAtendido" component={SuaAtividadeAtendido} />
+					<Route path="/suaAtividadeReportado" component={SuaAtividadeReportado} />
 				</Switch>
 			</Router>
 		</div>

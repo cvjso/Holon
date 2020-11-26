@@ -39,7 +39,8 @@ class CadastroPSR(models.Model):
     Referencia = models.CharField(max_length=120,blank=True)
     Descricao = models.TextField(max_length=120, blank=True)
     GrauPrioridade = models.CharField(max_length=120, choices=GRAU)
-    Dia = models.DateTimeField(auto_now=True,)
+    Hora = models.DateTimeField(auto_now=True,)
+    id_latlong = models.ForeignKey(LocalPSR,on_delete=models.CASCADE)
 
 class NecessidadesPSR(models.Model):
     Psr = models.ForeignKey(CadastroPSR, on_delete=models.CASCADE)
@@ -58,3 +59,8 @@ class NecessidadesPSR(models.Model):
 
     Comida = models.CharField(max_length=120,blank=True)
     Outros = models.CharField(max_length=120,blank=True)
+
+class LocalPSR(models.Model):
+    latitude = models.CharField(max_length=120,blank=True,default='')
+    longitude = models.CharField(max_length=120,blank=True,default='')
+    
