@@ -102,7 +102,7 @@ form {
 	color: var(--Darker);
 	font-weight: bold;
 	margin-top: 20%;
-	transition: 1s all;
+	transition: 0.5s all;
 }
 
 .bottomEntrar:hover {

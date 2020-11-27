@@ -29,6 +29,10 @@ ListaRoupas = {
 }
 
 # Create your models here.
+class LocalPSR(models.Model):
+    latitude = models.CharField(max_length=120,blank=True,default='')
+    longitude = models.CharField(max_length=120,blank=True,default='')
+
 class CadastroPSR(models.Model):
     GRAU = [("LOW", 'Baixa'),("MED", 'Media'),("HIGH",'Alta')]
     Nome = models.CharField(max_length=120,blank=True,default='')
@@ -59,8 +63,3 @@ class NecessidadesPSR(models.Model):
 
     Comida = models.CharField(max_length=120,blank=True)
     Outros = models.CharField(max_length=120,blank=True)
-
-class LocalPSR(models.Model):
-    latitude = models.CharField(max_length=120,blank=True,default='')
-    longitude = models.CharField(max_length=120,blank=True,default='')
-    

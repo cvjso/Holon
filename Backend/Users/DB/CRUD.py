@@ -34,4 +34,6 @@ def AuthUser(data):
     password = data["Senha"]
     del data["Senha"]
     user = FindUser(data)
-    return user.verify_password(password)
+    response = user.verify_password(password)
+    data["Senha"] = user.Senha
+    return response

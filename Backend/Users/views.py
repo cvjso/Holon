@@ -23,4 +23,9 @@ class UserView(APIView):
         
         if request.data["operation"] == "procurar":
             request.data["usuario"]["Senha"] = ReplacePassword(request.data["usuario"])
-            return FindUser(request.data["usuario"])
+            resp = FindUser(request.data["usuario"])
+            resp = {
+                "Nome": resp.Nome,
+                "Email": resp.Email
+            }
+            return Response(resp)
