@@ -4,9 +4,8 @@ import Cookies from 'universal-cookie';
 import { Redirect } from 'react-router-dom';
 
 const cookies = new Cookies();
-
-export class Cadastrar extends Component{
-  constructor(props) {
+class Cadastrar extends Component {
+	constructor(props) {
 		super(props);
 
 		this.state = {
@@ -63,75 +62,66 @@ export class Cadastrar extends Component{
 				console.log(error);
 			});
 	}
-  
-  render()
-          {
-          if (this.props.location.state.auth.authenticated === false) {
-            return (
-              <div className="mainDiv">
-                <div>
-                  <a href='/' className='back-icon'>
-                    <i class='fas fa-chevron-left' />
-                  </a>
-                </div>
 
-                <div className="items">
+	render() {
+		return (
+			<div className="mainDiv">
+				<div className="cadastro-header">
+					<a href="/" className="back-icon">
+						<i class="fas fa-chevron-left" />
+					</a>
+				</div>
 
-                  <h1 className='topText'>Comece na corrente do bem</h1>
+				<div className="items">
+					<h1 className="topText">Comece na corrente do bem</h1>
 
-                  <div className="icones">
+					<div className="icones">
+						<a href="/" className="google-icon">
+							<i class="fab fa-google" />
+						</a>
+						<a href="/" className="facebook-icon">
+							<i class="fab fa-facebook" />
+						</a>
+					</div>
 
-                    <a href='/' className="google-icon"><i class='fab fa-google' /></a>
-                    <a href='/' className="facebook-icon"><i class='fab fa-facebook' /></a>
+					<div className="line-text">
+						<div className="line" />
+						<h2 className="topText2">Ou crie uma conta</h2>
+						<div className="line" />
+					</div>
 
-                  </div>
+					<form onSubmit={this.handleSubmit} noValidate>
+						<input
+							name="nome"
+							onChange={this.handleChange}
+							type="text"
+							className="input-login"
+							placeholder="Nome Completo"
+							required
+						/>
+						<input
+							name="login"
+							onChange={this.handleChange}
+							type="email"
+							className="input-login"
+							placeholder="Email"
+							required
+						/>
+						<input
+							name="senha"
+							onChange={this.handleChange}
+							type="password"
+							className="input-login"
+							placeholder="Senha"
+							required
+						/>
 
-                  <div className="line-text">
-                    <div className="line"/><h2 className='topText2'>Ou crie uma conta</h2><div className="line" />
-                  </div>
-                  
-                  <form onSubmit={this.handleSubmit} noValidate>
-                    <input name="nome" onChange={this.handleChange} type="text" className="bottomNome" placeholder="Nome Completo" required />
-                    <input name="login" onChange={this.handleChange} type="email" className="bottomEmail" placeholder="Login" required />
-                    <input name="senha" onChange={this.handleChange} type="password" className="bottomSenha" placeholder="Senha" required />
-                    
-                    <div>
-                      <input type="checkbox" name="Termos" value="termos" className="checkbox"></input>
-                      <label for="termos">Sim, eu concordo com os Termos e Politica de Privacidade</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" name="Notificações" value="notificacoes" className="checkbox"></input>
-                      <label for="notificacoes">Sim, quero receber notificações por e-mail</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" name="Localização" value="localizacao" className="checkbox"></input>
-                      <label for="localizacao">Sim, permito o uso da minha localização</label>
-                    </div>
-
-                    {!this.state.loading && <input type="submit" value="Começar" className="bottomEntrar" />}
-
-                  </form>
-
-                </div>
-
-              </div>
-			)
-		} else {
-            return (
-              <div className="mainDiv">
-
-                <div>
-                  <a href='/' className='back-icon'>
-                    <i class='fas fa-chevron-left' />
-                  </a>
-                </div>
-
-              </div>
-            )
-          }
-		}
-			
+						<input type="submit" value="Começar" className="bottomEntrar" />
+					</form>
+				</div>
+			</div>
+		);
+	}
 }
-
 
 export default Cadastrar;
