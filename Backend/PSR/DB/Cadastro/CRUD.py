@@ -6,8 +6,8 @@ def FindPSR(data):
     except Exception:
         return []
 
-def CreatePSR(data):
-    newPSR = CadastroPSR(**data)
+def CreatePSR(local,data):
+    newPSR = CadastroPSR(id_latlong=local,**data)
     newPSR.save()
     return newPSR
 

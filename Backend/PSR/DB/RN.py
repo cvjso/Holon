@@ -1,10 +1,12 @@
 from PSR.DB.Cadastro.CRUD import *
 from PSR.DB.Necessidades.CRUD import *
+from PSR.DB.Local.CRUD import *
 from django.forms.models import model_to_dict
 
 class RN():
     def Create(data):
-        psr = CreatePSR(data["psr"])
+        local = CreateLocal(data['latlong'])
+        psr = CreatePSR(local,data["Psr"])
         CreateNecessidades(psr,data["necessidades"])
     
     def Remove(data):
