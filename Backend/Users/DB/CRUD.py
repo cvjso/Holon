@@ -14,7 +14,8 @@ def CreateUser(data):
     user.save()
 
 def FindUser(data):
-    return User.objects.filter(**data).first()
+    filterOnAll = User.objects.filter(**data)
+    return filterOnAll.first()
 
 def RemoveUser(data):
     # data["Senha"] = EncryptPassword(data["Senha"])
@@ -27,8 +28,9 @@ def ReplacePassword(data):
     password = data["Senha"]
     del data["Senha"]
     user = FindUser(data)
-    if user.verify_password(password):
-        return user.Senha
+    if user:
+        if user.verify_password(password):
+            return user.Senha
 
 def AuthUser(data):
     password = data["Senha"]

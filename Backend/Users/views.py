@@ -19,7 +19,17 @@ class UserView(APIView):
             return Response("Removido")
 
         if request.data["operation"] == "auth":
-            return Response(AuthUser(request.data["usuario"]))
+            resp = {}
+            if AuthUser(request.data["usuario"]):
+                resp = FindUser(request.data["usuario"])
+                resp = {
+                    "Nome": resp.Nome,
+                    "Email": resp.Email,
+                    "status": True
+                }
+            return Response(resp)
+
+            # return Response(AuthUser(request.data["usuario"]))
         
         if request.data["operation"] == "procurar":
             request.data["usuario"]["Senha"] = ReplacePassword(request.data["usuario"])

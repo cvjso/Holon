@@ -4,6 +4,7 @@
 	margin-left: auto;
 	display: flex;
 	margin-right: 10%;
+	color: var(--TextHeading);
 }
 
 .Nav-items * {

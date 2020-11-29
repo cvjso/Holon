@@ -3,6 +3,7 @@ import './Cadastrar.css';
 import Cookies from 'universal-cookie';
 import { Redirect } from 'react-router-dom';
 
+const axios = require('axios');
 const cookies = new Cookies();
 class Cadastrar extends Component {
 	constructor(props) {
@@ -12,8 +13,7 @@ class Cadastrar extends Component {
 			nome: '',
 			login: '',
 			password: '',
-			logged: false,
-			auth: '',
+			registered: false,
 			loading: false
 		};
 
@@ -26,36 +26,35 @@ class Cadastrar extends Component {
 			[event.target.name]: event.target.value
 		});
 	}
+
+	request_back(data) {
+		try {
+			return axios.post('http://localhost:8000/user', data);
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
 	handleSubmit(event) {
 		event.preventDefault();
 		this.setState({ loading: true });
 
-		const data = {
+		const content = {
 			operation: 'registrar',
-			nome: 'Victor Souza',
-			email: 'admin',
-			senha: '123'
-		};
-
-		const axios = require('axios');
-
-		const request_back = () => {
-			try {
-				//return axios.post('http://ec2-100-26-213-121.compute-1.amazonaws.com:8080/PCM/user', data);
-			} catch (error) {
-				console.error(error);
+			usuario: {
+				Nome: this.state.nome,
+				Email: this.state.login,
+				Senha: this.state.password
 			}
 		};
 
-		request_back()
+		console.log('chegou aqui');
+		this.request_back(content)
 			.then((response) => {
 				this.setState({ loading: false });
-				if (response.data.users != []) {
-					console.log(this.props);
-					this.props.location.state.auth.authenticated = true;
-					cookies.set('auth', true, { path: '/' });
-					cookies.set('login', this.state.login, { path: '/' });
-					this.setState({ logged: true });
+				if (response.data === 'Registrado') {
+					console.log(response);
+					this.setState({ registered: true });
 				}
 			})
 			.catch((error) => {
@@ -90,7 +89,7 @@ class Cadastrar extends Component {
 						<div className="line" />
 					</div>
 
-					<form onSubmit={this.handleSubmit} noValidate>
+					<form onSubmit={this.handleSubmit}>
 						<input
 							name="nome"
 							onChange={this.handleChange}
@@ -118,6 +117,11 @@ class Cadastrar extends Component {
 
 						<input type="submit" value="Começar" className="bottomEntrar" />
 					</form>
+					{this.state.registered && (
+						<div>
+							<h1>{this.state.nome} foi registrado com sucesso!</h1>
+						</div>
+					)}
 				</div>
 			</div>
 		);
