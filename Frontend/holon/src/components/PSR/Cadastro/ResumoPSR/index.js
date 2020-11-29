@@ -3,6 +3,7 @@ import './styles.css';
 import Cookies from 'universal-cookie';
 import { Redirect } from 'react-router-dom';
 import HeaderCadastro from '../HeaderCadastro';
+import { Accordion, Icon } from 'semantic-ui-react';
 
 const cookies = new Cookies();
 
@@ -22,11 +23,13 @@ export class ResumoPSR extends Component {
 			Cidade: '',
 			Referencia: '',
 			Grau: '',
-			redirectP3: ''
+			redirectP3: '',
+			selectedAccord: -1
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.getInputs = this.getInputs.bind(this);
+		this.setAccordion = this.setAccordion.bind(this);
 	}
 
 	handleChange(event) {
@@ -43,6 +46,15 @@ export class ResumoPSR extends Component {
 		this.setState({
 			redirectP3: '/'
 		});
+	}
+
+	setAccordion(e, titleProps) {
+		const { index } = titleProps;
+		var newIndex = index;
+		if (index == this.state.selectedAccord) {
+			newIndex = -1;
+		}
+		this.setState({ selectedAccord: newIndex });
 	}
 
 	getInputs() {
@@ -68,31 +80,43 @@ export class ResumoPSR extends Component {
 		return (
 			<div className="Resumo-main">
 				<HeaderCadastro />
-				<form onSubmit={this.handleSubmit}>
-					<div className="Resumo-content">
-						<div className="Resume-top">
-							<h4>Mais alguma coisa?</h4>
-							<div className="Resume-top-vertical-align">
-								<text>Grau de prioridade</text>
-								<div onChange={this.handleChange}>
-									<div>
-										<input type="radio" name="Grau" value="Baixo" />
-										<label for="Remedios">Baixo</label>
+				<form onSubmit={this.handleSubmit} className="Resumo-form">
+						<div className="Container-header">
+							<text>Mais alguma coisa?</text>
+						</div>
+						<Accordion styled className="Accordion">
+								<Accordion.Title
+									active={this.state.selectedAccord === 0}
+									index={0}
+									onClick={this.setAccordion}
+									className="Accordion-item"
+								>
+									<text>
+										<Icon className="dropdown" />
+										Grau de Prioridade
+									</text>
+								</Accordion.Title>
+								<Accordion.Content active={this.state.selectedAccord == 0} className="Accordion-content">
+									<div onChange={this.handleChange}>
+										<div>
+											<input type="radio" name="Grau" value="Baixo" />
+											<label for="Remedios">Baixo</label>
+										</div>
+										<div>
+											<input type="radio" name="Grau" value="Medio" />
+											<label for="Remedios">Médio</label>
+										</div>
+										<div>
+											<input type="radio" name="Grau" value="Alto" />
+											<label for="Remedios">Alto</label>
+										</div>
+										
 									</div>
-									<div>
-										<input type="radio" name="Grau" value="Medio" />
-										<label for="Remedios">Médio</label>
-									</div>
-									<div>
-										<input type="radio" name="Grau" value="Alto" />
-										<label for="Remedios">Alto</label>
-									</div>
-								</div>
-							</div>
-							<div className="Resume-top-vertical-align">
-								<text>Comentários</text>
-								<input className="Custom-input-text" name="" type="text" />
-							</div>
+								</Accordion.Content>
+						</Accordion>
+						<div className="Container-header"> 
+							<text>Comentários</text>
+							<input className="Custom-input-text" name="" type="text" placeholder="Digite seu comentario" />
 						</div>
 						<div className="Resume-bottom">
 							<h3>Resumo</h3>
@@ -118,10 +142,9 @@ export class ResumoPSR extends Component {
 								{this.state.Grau}
 							</div>
 						</div>
-						<div className="Container-field Container-header">
+						<div className="Finalizar-chamado">
 							<input type="submit" value="Finalizar Chamado" />
 						</div>
-					</div>
 				</form>
 			</div>
 		);
