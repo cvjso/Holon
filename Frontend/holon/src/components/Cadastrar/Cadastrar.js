@@ -47,8 +47,8 @@ class Cadastrar extends Component {
 				Senha: this.state.password
 			}
 		};
-
-		console.log('chegou aqui');
+		
+		console.log("chegou aqui");
 		this.request_back(content)
 			.then((response) => {
 				this.setState({ loading: false });
@@ -107,7 +107,7 @@ class Cadastrar extends Component {
 							required
 						/>
 						<input
-							name="senha"
+							name="password"
 							onChange={this.handleChange}
 							type="password"
 							className="input-login"

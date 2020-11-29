@@ -6,6 +6,7 @@ import { Button, Checkbox, Grid, Header, Icon, Image, Menu, Segment, Sidebar } f
 import './styles.css';
 
 require('dotenv').config();
+const axios = require('axios');
 
 export class Mapa extends Component {
 	constructor(props) {
@@ -85,6 +86,7 @@ export class Mapa extends Component {
 			this.setState({ modal: false });
 		}
 	}
+
 
 	render() {
 		return (
