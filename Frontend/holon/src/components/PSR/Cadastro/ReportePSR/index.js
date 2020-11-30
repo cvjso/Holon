@@ -13,7 +13,7 @@ export class ReportePSR extends Component {
 		super(props);
 		this.state = {
 			redirect: null,
-			Endereco: [ 0, 0 ],
+			Endereco: '',
 			Bairro: '',
 			Cidade: '',
 			Referencia: '',
@@ -50,7 +50,7 @@ export class ReportePSR extends Component {
 			console.log(latPlace);
 			console.log(lngPlace);
 			this.setState({
-				Endereco: [ latPlace, lngPlace ]
+				Endereco: { lat: latPlace, lng: lngPlace }
 			});
 			console.log(this.state.Endereco);
 		} else {
@@ -67,11 +67,11 @@ export class ReportePSR extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 
-		for (var key in this.state) {
-			cookies.set(key, this.state[key]);
-		}
+		// for (var key in this.state) {
+		// 	cookies.set(key, this.state[key]);
+		// }
 
-		cookies.remove('libraries');
+		// cookies.remove('libraries');
 
 		this.setState({
 			redirect: '/reporte/P2'
@@ -85,7 +85,15 @@ export class ReportePSR extends Component {
 			return (
 				<Redirect
 					to={{
-						pathname: this.state.redirect
+						pathname: this.state.redirect,
+						state: {
+							psr: {
+								Endereco: this.state.Endereco,
+								Bairro: this.state.Bairro,
+								Cidade: this.state.Cidade,
+								Referencia: this.state.Referencia
+							}
+						}
 					}}
 				/>
 			);

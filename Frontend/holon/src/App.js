@@ -75,8 +75,8 @@ export default class App extends Component {
 							render={(props) => <Cadastrar {...props} loggedStatus={this.state.loggedStatus} />}
 						/>
 						<Route path="/reporte/P1" component={ReportePSR} />
-						<Route path="/reporte/P2" component={NecessidadesPSR} />
-						<Route path="/reporte/P3" component={ResumoPSR} />
+						<Route path="/reporte/P2" render={(props) => <NecessidadesPSR {...props} />} />
+						<Route path="/reporte/P3" render={(props) => <ResumoPSR {...props} />} />
 						<Route path="/reporte" component={ReportePSR} />
 						<Route path="/mapa" component={Mapa} />
 						<Route path="/suaAtividadeAtendido" component={SuaAtividadeAtendido} />

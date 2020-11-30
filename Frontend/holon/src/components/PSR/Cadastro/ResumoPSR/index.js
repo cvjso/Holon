@@ -46,8 +46,14 @@ export class ResumoPSR extends Component {
 	}
 
 	getInputs() {
-		for (var key in cookies.getAll()) {
-			this.setState({ [key]: cookies.get(key) });
+		var PSRContent = this.props.location.state.psr;
+		for (var key in Object.keys(PSRContent)) {
+			this.setState({ [key]: PSRContent[key] });
+		}
+
+		var PSRNecessidades = this.props.location.state.necessidades;
+		for (var key in Object.keys(PSRNecessidades)) {
+			this.setState({ [key]: PSRNecessidades[key] });
 		}
 	}
 

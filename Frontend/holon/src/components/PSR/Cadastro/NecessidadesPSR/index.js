@@ -45,9 +45,9 @@ export class NecessidadesPSR extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 
-		for (var key in Object.keys(this.state)) {
-			cookies.set(key, this.state[key]);
-		}
+		// for (var key in Object.keys(this.state)) {
+		// 	cookies.set(key, this.state[key]);
+		// }
 
 		this.setState({
 			redirectP2: '/reporte/P3'
@@ -56,10 +56,22 @@ export class NecessidadesPSR extends Component {
 
 	render() {
 		if (this.state.redirectP2) {
+			this.props.location.state.psr['Descricao'] = this.state.Descricao;
 			return (
 				<Redirect
 					to={{
-						pathname: this.state.redirectP2
+						pathname: this.state.redirectP2,
+						state: {
+							psr: this.props.location.state.psr,
+							necessidades: {
+								Saude: this.Saude,
+								Comida: this.Comida,
+								Agua: this.Agua,
+								Higiene: this.Higiene,
+								Roupa: this.Roupa,
+								Outros: this.Outros
+							}
+						}
 					}}
 				/>
 			);
