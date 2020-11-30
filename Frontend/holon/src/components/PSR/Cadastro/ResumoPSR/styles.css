@@ -1,61 +1,117 @@
+@import "../../../../App.css";
+
 .Resumo-main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.Resumo-content {
-    display: flex;
-    margin-top: 5%;
-    flex-direction: column;
+.Accordion {
+	background: var(--Darker) !important;
+	width: 100% !important;
+	margin-top: 2%;
 }
 
-.Resume-top {
-    display: flex;
-    flex-direction: column;
+.Resumo-form {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 
-.Resume-top h4 {
-    align-self: center;
-    margin-bottom: 5%;
+.active {
+	background: var(--Lighteen) !important;
+	/* opacity: 0.75 !important; */
 }
 
-.Resume-top-vertical-align {
-    display: flex;
-    flex-direction: column;
+.Resumo-main text,
+label {
+	color: var(--TextHeading);
 }
 
-.Resume-top-vertical-align div {
-    margin-top: 5%;
-    margin-bottom: 5%;
+
+.Container-header {
+	margin-top: 6%;
+	margin-left: 8px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+
+.Accordion-item {
+	margin-top: 2% !important;
+	display: flex;
+	flex-direction: column;
+	background: var(--Lighter);
+	margin-left: 5% !important;
+	margin-right: 5% !important;
+}
+
+.Accordion-content {
+	display: flex;
+	flex-direction: column;
+	background: var(--Lighter);
+	margin-left: 5% !important;
+	margin-right: 5% !important;
+}
+
+.Custom-input-text {
+    background: var(--Lighter);
+	border-radius: 4px;
+	width: 90%;
+	height: 48px;
+	margin-left: 3.33%;
+	margin-top: 1.5%;
+	color: var(--TextHeading);
+	text-indent: 5px;
+	border: 0;
 }
 
 .Resume-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 6%;
+	margin-left: 8px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;	
+	color: var(--TextHeading);
 }
 
 .Resume-bottom h3 {
     align-self: center;
     margin-top: 5%;
-    margin-bottom: 5%;
+	margin-bottom: 5%;
+	font-weight: bold;
+	color: var(--TextHeading);
 }
 
 .Resume-bottom div {
     margin-bottom: 5%;
 }
 
-.Custom-input-text {
-    background: #CEBDBD;
-    border-radius: 4px;
-    width: auto;
-    height: 38px;
-    margin-left: auto;
-    margin-right: auto;
+.Resume-bottom h4, 
+label {
+	color: var(--TextHeading);
+	font-weight: bold;
 }
 
-h4 {
-    font-weight: bold;
+
+.Finalizar-chamado {
+    display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 20%;
+}
+
+.Finalizar-chamado input {
+    background: var(--ButtonBright);
+	border: 0;
+	height: 40px;
+	color: var(--Darker);
+	font-weight: bold;
+}
+
+label {
+	margin-left: 3%;
 }
