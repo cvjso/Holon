@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Cadastrar.css';
 import Cookies from 'universal-cookie';
 import { Redirect } from 'react-router-dom';
+import Spinner from '../../common/Images/LoadingSpinner.gif';
 
 const axios = require('axios');
 const cookies = new Cookies();
@@ -14,7 +15,8 @@ class Cadastrar extends Component {
 			login: '',
 			password: '',
 			registered: false,
-			loading: false
+			loading: false,
+			errorMessage: ''
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,6 +39,7 @@ class Cadastrar extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		this.setState({ errorMessage: '' });
 		this.setState({ loading: true });
 
 		const content = {
@@ -47,14 +50,16 @@ class Cadastrar extends Component {
 				Senha: this.state.password
 			}
 		};
-		
-		console.log("chegou aqui");
+
+		console.log('chegou aqui');
 		this.request_back(content)
 			.then((response) => {
 				this.setState({ loading: false });
 				if (response.data === 'Registrado') {
 					console.log(response);
 					this.setState({ registered: true });
+				} else {
+					this.setState({ errorMessage: response.data });
 				}
 			})
 			.catch((error) => {
@@ -116,10 +121,17 @@ class Cadastrar extends Component {
 						/>
 
 						<input type="submit" value="Começar" className="bottomEntrar" />
+						{this.state.loading && <img src={Spinner} />}
 					</form>
 					{this.state.registered && (
 						<div>
 							<h1>{this.state.nome} foi registrado com sucesso!</h1>
+						</div>
+					)}
+
+					{this.state.errorMessage != '' && (
+						<div className="error-message">
+							<h1>{this.state.errorMessage}</h1>
 						</div>
 					)}
 				</div>

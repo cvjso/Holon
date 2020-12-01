@@ -11,8 +11,12 @@ from Users.DB.CRUD import *
 class UserView(APIView):
     def post(self, request, *args, **kwargs):
         if request.data["operation"] == "registrar":
-            CreateUser(request.data["usuario"])
-            return Response("Registrado")
+            existedUser = FindUser(request.data["usuario"])
+            if existedUser != None:
+                CreateUser(request.data["usuario"])
+                return Response("Registrado")
+            else:
+                return Response("Usuário já foi cadastrado")
         
         if request.data["operation"] == "remover":
             RemoveUser(request.data["usuario"])
@@ -27,6 +31,8 @@ class UserView(APIView):
                     "Email": resp.Email,
                     "status": True
                 }
+            else:
+                raise Exception
             return Response(resp)
 
             # return Response(AuthUser(request.data["usuario"]))

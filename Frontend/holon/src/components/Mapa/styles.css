@@ -7,9 +7,13 @@
 	width: 300px;
 	height: 32px;
 	box-sizing: border-box;
-	border: 1px solid transparent;
-	text-align: center;
+	border: 0;
+	text-align: left;
+	text-indent: 7px;
 	text-overflow: ellipsis;
+	background: var(--Lighter);
+	color: var(--TextHeading);
+	border-radius: 4px;
 }
 
 .Map-container {

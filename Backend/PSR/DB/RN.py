@@ -6,7 +6,7 @@ from django.forms.models import model_to_dict
 class RN():
     def Create(data):
         local = CreateLocal(data['latlong'])
-        psr = CreatePSR(local,data["Psr"])
+        psr = CreatePSR(local,data["psr"])
         CreateNecessidades(psr,data["necessidades"])
     
     def Remove(data):

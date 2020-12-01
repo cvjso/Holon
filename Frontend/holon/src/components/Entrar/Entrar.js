@@ -4,7 +4,7 @@ import './Entrar.css';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import GoogleBtn from '../GoogleBtn/index';
-import Spinner from '../Images/LoadingSpinner.gif';
+import Spinner from '../../common/Images/LoadingSpinner.gif';
 const cookies = new Cookies();
 
 export class Entrar extends Component {

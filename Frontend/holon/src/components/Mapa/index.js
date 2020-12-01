@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import mapStyles from './mapsStyles';
 import { GoogleMap, LoadScript, useLoadScript, Marker, InfoWindow, Autocomplete } from '@react-google-maps/api';
 import { Button, Checkbox, Grid, Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
-
+import * as JSONFile from '../../common/system.json';
 import './styles.css';
 
 require('dotenv').config();
@@ -87,7 +87,6 @@ export class Mapa extends Component {
 		}
 	}
 
-
 	render() {
 		return (
 			<div className="Map-container">
@@ -138,7 +137,7 @@ export class Mapa extends Component {
 						<div>
 							<LoadScript
 								libraries={this.state.libraries}
-								googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+								googleMapsApiKey={JSONFile.REACT_APP_GOOGLE_MAPS_API_KEY}
 							>
 								<GoogleMap
 									mapContainerStyle={{ width: '100vw', height: '100vh' }}

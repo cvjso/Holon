@@ -35,7 +35,7 @@ export class NavBar extends Component {
 								</div>
 								<Link to="/mapa">Mapa</Link>
 								<Link to="/reporte">Reportar</Link>
-								<Link to="/suaAtividadeAtendido">Reportar</Link>
+								<Link to="/suaAtividadeAtendido">Histórico</Link>
 							</div>
 						</Navbar.Collapse>
 					</Navbar>

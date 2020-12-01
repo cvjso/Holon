@@ -41,7 +41,7 @@ export class ResumoPSR extends Component {
 
 	request_back(data) {
 		try {
-			return axios.post('http://localhost:8000/user', data);
+			return axios.post('http://localhost:8000/psr', data);
 		} catch (error) {
 			console.error(error);
 		}
@@ -54,19 +54,24 @@ export class ResumoPSR extends Component {
 		psrData['GrauPrioridade'] = this.state.Grau;
 
 		const requestData = {
+			operation: 'criar',
 			psr: psrData,
 			necessidades: this.props.location.state.necessidades,
 			latlong: this.props.location.state.latlong
 		};
 
-		this.request_back(requestData).then((response) => {
-			console.log(response);
-			if (response === 'Reporte Cadastrado') {
-				this.setState({
-					redirectP3: '/'
-				});
-			}
-		});
+		this.request_back(requestData)
+			.then((response) => {
+				console.log(response);
+				if (response.data === 'Reporte Cadastrado') {
+					this.setState({
+						redirectP3: '/'
+					});
+				}
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 	setAccordion(e, titleProps) {
