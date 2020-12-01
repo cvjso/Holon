@@ -17,6 +17,7 @@ export class ReportePSR extends Component {
 			Bairro: '',
 			Cidade: '',
 			Referencia: '',
+			latlong: '',
 			libraries: [ 'places' ]
 		};
 		this.ShouldRedirect = false;
@@ -35,13 +36,19 @@ export class ReportePSR extends Component {
 	onPlaceChanged() {
 		if (this.autocomplete !== null) {
 			console.log(this.autocomplete.getPlace());
-			var bairroFiltered = this.autocomplete.getPlace().address_components[0].long_name;
-			var cidadeFiltered = this.autocomplete.getPlace().address_components[1].long_name;
+			console.log(this.autocomplete.getPlace().formatted_address);
+			var AddressNoSplit = this.autocomplete.getPlace().formatted_address;
+			var AddressSplit = AddressNoSplit.split(',');
+			var bairroFiltered = AddressSplit[0];
+			var cidadeFiltered = AddressSplit[1];
 			this.setState({
 				Bairro: bairroFiltered
 			});
 			this.setState({
 				Cidade: cidadeFiltered
+			});
+			this.setState({
+				Endereco: AddressNoSplit
 			});
 			console.log(this.state.Bairro);
 			console.log(this.state.Cidade);
@@ -50,7 +57,7 @@ export class ReportePSR extends Component {
 			console.log(latPlace);
 			console.log(lngPlace);
 			this.setState({
-				Endereco: { lat: latPlace, lng: lngPlace }
+				latlong: { latitude: latPlace, longitude: lngPlace }
 			});
 			console.log(this.state.Endereco);
 		} else {
@@ -92,7 +99,8 @@ export class ReportePSR extends Component {
 								Bairro: this.state.Bairro,
 								Cidade: this.state.Cidade,
 								Referencia: this.state.Referencia
-							}
+							},
+							latlong: this.state.latlong
 						}
 					}}
 				/>

@@ -64,13 +64,14 @@ export class NecessidadesPSR extends Component {
 						state: {
 							psr: this.props.location.state.psr,
 							necessidades: {
-								Saude: this.Saude,
-								Comida: this.Comida,
-								Agua: this.Agua,
-								Higiene: this.Higiene,
-								Roupa: this.Roupa,
-								Outros: this.Outros
-							}
+								Saude: this.state.Saude,
+								Comida: this.state.Comida,
+								Agua: this.state.Agua,
+								Higiene: this.state.Higiene,
+								Roupas: this.state.Roupas,
+								Outros: this.state.Outros
+							},
+							latlong: this.props.location.state.latlong
 						}
 					}}
 				/>

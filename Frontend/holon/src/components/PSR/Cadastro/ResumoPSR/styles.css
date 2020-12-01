@@ -1,7 +1,7 @@
 @import "../../../../App.css";
 
-.Resumo-main{
-    display: flex;
+.Resumo-main {
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -10,7 +10,7 @@
 .Accordion {
 	background: var(--Darker) !important;
 	width: 100% !important;
-	margin-top: 2%;
+	margin-top: 1%;
 }
 
 .Resumo-form {
@@ -30,18 +30,16 @@ label {
 	color: var(--TextHeading);
 }
 
-
 .Container-header {
-	margin-top: 6%;
+	margin-top: 1.5%;
 	margin-left: 8px;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
 
-
 .Accordion-item {
-	margin-top: 2% !important;
+	margin-top: 0% !important;
 	display: flex;
 	flex-direction: column;
 	background: var(--Lighter);
@@ -58,7 +56,7 @@ label {
 }
 
 .Custom-input-text {
-    background: var(--Lighter);
+	background: var(--Lighter);
 	border-radius: 4px;
 	width: 90%;
 	height: 48px;
@@ -70,42 +68,44 @@ label {
 }
 
 .Resume-bottom {
-    margin-top: 6%;
+	margin-top: 2%;
 	margin-left: 8px;
 	display: flex;
 	flex-direction: column;
-	width: 100%;	
+	width: 100%;
 	color: var(--TextHeading);
+	justify-content: center;
+	align-items: center;
 }
 
 .Resume-bottom h3 {
-    align-self: center;
-    margin-top: 5%;
-	margin-bottom: 5%;
+	align-self: center;
+	margin-top: 1%;
+	margin-bottom: 2%;
 	font-weight: bold;
 	color: var(--TextHeading);
 }
 
 .Resume-bottom div {
-    margin-bottom: 5%;
+	margin-bottom: 1%;
+	width: 100%;
 }
 
-.Resume-bottom h4, 
+.Resume-bottom h4,
 label {
 	color: var(--TextHeading);
 	font-weight: bold;
 }
 
-
 .Finalizar-chamado {
-    display: flex;
+	display: flex;
 	flex-direction: column;
 	width: 100%;
-	margin-top: 20%;
+	margin-top: auto;
 }
 
 .Finalizar-chamado input {
-    background: var(--ButtonBright);
+	background: var(--ButtonBright);
 	border: 0;
 	height: 40px;
 	color: var(--Darker);
