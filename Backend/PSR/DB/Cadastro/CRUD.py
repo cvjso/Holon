@@ -2,7 +2,7 @@ from PSR.models import CadastroPSR
 
 def FindPSR(data):
     try:
-        return CadastroPSR.objects.filter(**data).first()
+        return CadastroPSR.objects.filter(**data)
     except Exception:
         return []
 

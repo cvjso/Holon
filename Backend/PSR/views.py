@@ -22,9 +22,14 @@ class PSR(APIView):
             return Response(resp)
 
         if request.data["operation"] == "procurar":
-            resp = RN.Find(request.data["psr"])
+            resp = RN.Find(request.data["Latlng"])
             return Response(resp)
         
         if request.data["operation"] == "atualizar":
             RN.Update(request.data)
             return Response("Reporte Atualizado")
+        
+        if request.data["operation"] == "mapa":
+            resp = RN.FindAll(request.data["psr"])
+            return Response(resp)
+        

@@ -4,6 +4,7 @@ import { GoogleMap, LoadScript, useLoadScript, Marker, InfoWindow, Autocomplete 
 import { Button, Checkbox, Grid, Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import * as JSONFile from '../../common/system.json';
 import './styles.css';
+import PSR_Icon from './images/PSR_Icon.png';
 
 require('dotenv').config();
 const axios = require('axios');
@@ -23,7 +24,16 @@ export class Mapa extends Component {
 			},
 			markers: [],
 			modal: false,
-			libraries: [ 'places' ]
+			libraries: [ 'places' ],
+			psrInfo: {
+				psr: {
+					Endereco: '',
+					Referencia: '',
+					Descricao: '',
+					GrauPrioridade: ''
+				},
+				necessidades: ''
+			}
 		};
 		this.myMap = React.createRef();
 		this.onMapLoad = this.onMapLoad.bind(this);
@@ -42,6 +52,40 @@ export class Mapa extends Component {
 
 	onLoad(autocomplete) {
 		this.autocomplete = autocomplete;
+	}
+
+	request_back(data) {
+		try {
+			return axios.post('http://localhost:8000/psr', data);
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	componentDidMount() {
+		const data = {
+			operation: 'mapa',
+			psr: {}
+		};
+		this.request_back(data)
+			.then((response) => {
+				var prevValue = 0;
+				var newMarkers = [];
+				response.data.forEach((value) => {
+					if (value.id != prevValue) {
+						value.lat = parseFloat(value.lat);
+						value.lng = parseFloat(value.lng);
+						newMarkers.push(value);
+					}
+					prevValue = value.id;
+				});
+				this.setState({
+					markers: newMarkers
+				});
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 	onPlaceChanged() {
@@ -73,10 +117,29 @@ export class Mapa extends Component {
 		console.log(this.state.markers);
 	}
 
-	setModal() {
+	setModal(event) {
 		if (this.state.modal) {
 			this.setState({ modal: false });
 		} else {
+			console.log(event.latLng.lat());
+			console.log(event.latLng.lng());
+			const data = {
+				Latlng: {
+					latitude: event.latLng.lat(),
+					longitude: event.latLng.lng()
+				},
+				operation: 'procurar'
+			};
+			this.request_back(data)
+				.then((response) => {
+					this.setState({
+						psrInfo: response.data
+					});
+					console.log(this.state.psrInfo);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 			this.setState({ modal: true });
 		}
 	}
@@ -99,6 +162,7 @@ export class Mapa extends Component {
 							direction={'bottom'}
 							visible={true}
 							// onHide={this.handleSidebarHide}
+							id="modal-content"
 						>
 							<div className="modal-chamado-container">
 								<button className="modal-fechar" onClick={this.handleSidebarHide}>
@@ -112,17 +176,21 @@ export class Mapa extends Component {
 									</div>
 									<div>
 										<h3>Localização Aproximada</h3>
-										<text>Rua Maria João, 274 Bairro do Recife </text>
+										<text>{this.state.psrInfo.psr.Endereco} </text>
 									</div>
 									<div>
 										<h3>Como identificar?</h3>
-										<text>Homem alto, por volta dos 50 anos, camisa vermelha</text>
+										<text>
+											{this.state.psrInfo.psr.Referencia} - {this.state.psrInfo.psr.Descricao}{' '}
+										</text>
 									</div>
 									<div>
 										<h3>O que precisa?</h3>
+										{/* <text>{this.state.psrInfo.necessidades}</text> */}
 									</div>
 									<div>
 										<h3>Grau de prioridade</h3>
+										<text>{this.state.psrInfo.psr.GrauPrioridade}</text>
 									</div>
 								</div>
 								<button className="modal-ajuda-button">Quero Ajudar</button>
@@ -144,7 +212,7 @@ export class Mapa extends Component {
 									zoom={this.state.zoom}
 									center={this.state.center}
 									options={this.state.options}
-									onClick={this.appendMarkers}
+									// onClick={this.appendMarkers}
 									onLoad={this.onMapLoad}
 								>
 									<Autocomplete onLoad={this.onLoad} onPlaceChanged={this.onPlaceChanged}>
@@ -152,13 +220,14 @@ export class Mapa extends Component {
 									</Autocomplete>
 									{this.state.markers.map((marker) => (
 										<Marker
-											key={marker.time.toISOString()}
+											key={marker.id}
 											position={{ lat: marker.lat, lng: marker.lng }}
 											onClick={this.setModal}
-											icon={{
-												url: '/PSR_Icon.svg',
-												scaledSize: new window.google.maps.Size(30, 30)
-											}}
+											// icon={{
+											// 	url: '/PSR_Icon.svg',
+											// 	scaledSize: new window.google.maps.Size(30, 30)
+											// }}
+											icon={{ url: PSR_Icon, scaledSize: new window.google.maps.Size(22, 30) }}
 										/>
 									))}
 								</GoogleMap>

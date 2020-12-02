@@ -5,21 +5,26 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: 300px;
-	height: 32px;
+	height: 42px;
 	box-sizing: border-box;
 	border: 0;
 	text-align: left;
-	text-indent: 7px;
+	text-indent: 10px;
 	text-overflow: ellipsis;
-	background: var(--Lighter);
-	color: var(--TextHeading);
-	border-radius: 4px;
+	background: var(--TextHeading);
+	color: var(--Darker);
+	border-radius: 20px;
 }
 
 .Map-container {
 	width: 100%;
 	display: flex;
+	border: none;
 	height: calc(100vh - 46px);
+}
+
+.Map-container div:first-child {
+	border: none;
 }
 
 .modal-chamado-container {
@@ -28,6 +33,14 @@
 	align-items: center;
 	width: 100%;
 	height: 80vh;
+	background: var(--Darker);
+	color: var(--TextHeading);
+	border: 0 !important;
+}
+
+#modal-content {
+	box-shadow: none !important;
+	border: 0 !important;
 }
 
 .modal-chamado-infos div {
@@ -56,22 +69,31 @@
 	width: 100% !important;
 	margin-top: auto;
 	height: 65px;
-	background: #835757;
-	color: #ffffff;
+	background: var(--ButtonBright);
+	color: var(--Darker);
 	border: none;
 	border-radius: 2%;
+	transition-duration: 0.5s;
 }
 
 .modal-ajuda-button:hover {
-	opacity: 0.8;
+	background: var(--Lighter);
+	color: var(--TextHeading);
 }
 
 .modal-fechar {
 	text-decoration: none;
 	width: 10% !important;
-	background: #ff3c3c;
+	background: transparent;
 	color: #ffffff;
-	height: 24px;
+	height: 32px;
+	transition-duration: 0.5s;
+	font-size: 28px;
+}
+
+.modal-fechar:hover {
+	background: var(--Lighter);
+	border-radius: 5px;
 }
 
 button {
