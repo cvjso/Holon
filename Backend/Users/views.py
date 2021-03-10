@@ -11,12 +11,12 @@ from Users.DB.CRUD import *
 class UserView(APIView):
     def post(self, request, *args, **kwargs):
         if request.data["operation"] == "registrar":
-            existedUser = FindUser(request.data["usuario"])
-            if existedUser != None:
-                CreateUser(request.data["usuario"])
-                return Response("Registrado")
-            else:
-                return Response("Usuário já foi cadastrado")
+            # existedUser = FindUser(request.data["usuario"])
+            # if existedUser != None:
+            CreateUser(request.data["usuario"])
+            return Response("Registrado")
+            # else:
+            #     return Response("Usuário já foi cadastrado")
         
         if request.data["operation"] == "remover":
             RemoveUser(request.data["usuario"])

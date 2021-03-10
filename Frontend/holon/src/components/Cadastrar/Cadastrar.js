@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Cadastrar.css';
 import Cookies from 'universal-cookie';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Spinner from '../../common/Images/LoadingSpinner.gif';
 
 const axios = require('axios');
@@ -54,9 +54,9 @@ class Cadastrar extends Component {
 		console.log('chegou aqui');
 		this.request_back(content)
 			.then((response) => {
+				console.log(response);
 				this.setState({ loading: false });
 				if (response.data === 'Registrado') {
-					console.log(response);
 					this.setState({ registered: true });
 				} else {
 					this.setState({ errorMessage: response.data });
@@ -71,9 +71,9 @@ class Cadastrar extends Component {
 		return (
 			<div className="mainDiv">
 				<div className="cadastro-header">
-					<a href="/" className="back-icon">
+					<Link href="/" className="back-icon">
 						<i class="fas fa-chevron-left" />
-					</a>
+					</Link>
 				</div>
 
 				<div className="items">

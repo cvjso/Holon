@@ -27,11 +27,11 @@ export class Home extends Component {
 	}
 
 	componentDidMount() {
-		let reportCookies = cookies.get('finished');
-		this.setState({
-			reporte: reportCookies
-		});
-		console.log(reportCookies);
+		if (this.props.location.ajudado) {
+			this.setState({
+				reporte: true
+			});
+		}
 		console.log(this.state.reporte);
 	}
 
@@ -43,7 +43,6 @@ export class Home extends Component {
 						<h3 className="TextoReportBox">Chamado Registrado!</h3>
 						<h6 className="EditButton">Editar</h6>
 						<p>{this.state.curTime}</p>
-						<Link className="Details">Detalhes</Link>
 					</div>
 					<div className="Text" id="text-attributes">
 						A mudança começa com você
@@ -54,9 +53,9 @@ export class Home extends Component {
 					</div>
 					<div className="btnChamado">
 						{
-							<a href="/" className="linkChamado">
+							<Link href="/" className="linkChamado">
 								Abrir um chamado
-							</a>
+							</Link>
 						}
 					</div>
 				</div>

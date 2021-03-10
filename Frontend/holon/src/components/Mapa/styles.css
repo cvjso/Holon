@@ -16,6 +16,11 @@
 	border-radius: 20px;
 }
 
+.modal-chamado-nececidades {
+	display: flex;
+	flex-direction: column;
+}
+
 .Map-container {
 	width: 100%;
 	display: flex;

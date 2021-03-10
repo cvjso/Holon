@@ -44,6 +44,7 @@ export class Mapa extends Component {
 		this.autocomplete = null;
 		this.onLoad = this.onLoad.bind(this);
 		this.onPlaceChanged = this.onPlaceChanged.bind(this);
+		this.RedirectToHelp = this.RedirectToHelp.bind(this);
 	}
 
 	onMapLoad(map) {
@@ -60,6 +61,13 @@ export class Mapa extends Component {
 		} catch (error) {
 			console.error(error);
 		}
+	}
+
+	RedirectToHelp() {
+		this.props.history.push({
+			pathname: '/ajudar',
+			psrNecessidades: this.state.psrInfo.necessidades
+		});
 	}
 
 	componentDidMount() {
@@ -132,6 +140,8 @@ export class Mapa extends Component {
 			};
 			this.request_back(data)
 				.then((response) => {
+					response.data.necessidades.id = '';
+					response.data.necessidades.Psr = '';
 					this.setState({
 						psrInfo: response.data
 					});
@@ -184,8 +194,11 @@ export class Mapa extends Component {
 											{this.state.psrInfo.psr.Referencia} - {this.state.psrInfo.psr.Descricao}{' '}
 										</text>
 									</div>
-									<div>
+									<div className="modal-chamado-nececidades">
 										<h3>O que precisa?</h3>
+										{Object.keys(this.state.psrInfo.necessidades).map((necessidade) => (
+											<text>{this.state.psrInfo.necessidades[necessidade]}</text>
+										))}
 										{/* <text>{this.state.psrInfo.necessidades}</text> */}
 									</div>
 									<div>
@@ -193,7 +206,9 @@ export class Mapa extends Component {
 										<text>{this.state.psrInfo.psr.GrauPrioridade}</text>
 									</div>
 								</div>
-								<button className="modal-ajuda-button">Quero Ajudar</button>
+								<button className="modal-ajuda-button" onClick={this.RedirectToHelp}>
+									Quero Ajudar
+								</button>
 							</div>
 						</Sidebar>
 					) : (

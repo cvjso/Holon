@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import Comodarassistencia from './components/ComodarAssistencia/Comodarassistencia';
 import Faq from './components/FAQ/Faq';
 import SobreNos from './components/SobreNos/SobreNos';
-import Ajuda from './components/Ajuda/Ajuda';
+import ajudar from './components/ReportePSR/Ajudar';
 import Entrar from './components/Entrar/Entrar.js';
 import Cadastrar from './components/Cadastrar/Cadastrar';
 import ReportePSR from './components/PSR/Cadastro/ReportePSR';
@@ -58,7 +58,6 @@ export default class App extends Component {
 						<Route path="/como-dar-assistencia" component={Comodarassistencia} />
 						<Route path="/faq" component={Faq} />
 						<Route path="/sobre-nos" component={SobreNos} />
-						<Route path="/ajuda" component={Ajuda} />
 						<Route
 							path="/entrar"
 							render={(props) => (
@@ -79,6 +78,7 @@ export default class App extends Component {
 						<Route path="/reporte/P3" render={(props) => <ResumoPSR {...props} />} />
 						<Route path="/reporte" component={ReportePSR} />
 						<Route path="/mapa" component={Mapa} />
+						<Route path="/ajudar" component={ajudar} />
 						<Route path="/suaAtividadeAtendido" component={SuaAtividadeAtendido} />
 						<Route path="/suaAtividadeReportado" component={SuaAtividadeReportado} />
 					</Switch>

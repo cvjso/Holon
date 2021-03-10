@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 import GoogleBtn from '../GoogleBtn/index';
 import Spinner from '../../common/Images/LoadingSpinner.gif';
+import { Link } from 'react-router-dom';
 const cookies = new Cookies();
 
 export class Entrar extends Component {
@@ -113,9 +114,9 @@ export class Entrar extends Component {
 							onChange={this.handleChange}
 							required
 						/>
-						<a href="/" className="fogot-password">
+						<Link href="/" className="fogot-password">
 							Esqueci minha senha
-						</a>
+						</Link>
 
 						<input type="submit" value="Entrar" className="bottomEntrar" />
 						{this.state.loading && <img src={Spinner} />}

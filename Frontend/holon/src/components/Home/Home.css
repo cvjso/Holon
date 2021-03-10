@@ -6,18 +6,22 @@
 	font-family: Poppins;
 	font-style: bold;
 	font-weight: normal;
-	background-color: var(--Darker);
-	padding: 8%;
+	background-color: var(--ButtonBright);
+	border-radius: 15px;
+	margin: 8% 4%;
+	padding: 2%;
 }
 
 .EditButton {
 	text-align: right;
+	font-weight: bolder;
 	float: right;
 }
 
 .TextoReportBox {
 	text-align: left;
-	margin-bottom: 10%;
+	margin-bottom: 6%;
+	font-weight: bolder;
 }
 
 .Text {
